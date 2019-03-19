@@ -6,40 +6,40 @@ const Schema = mongoose.Schema;
 const User = new Schema({
   
   username: {
-    type: string
+    type: String
   },
   password: {
-    type: string
+    type: String
   },
   ID: {
-    type: string
+    type: String
   },
   name: {
-    type: string
+    type: String
   },
   surname: {
-    type: string
+    type: String
   },
   faculty: {
-    type: string
+    type: String
   },
   branch: {
-    type: string
+    type: String
   },
   year: {
-    type: char
+    type: String
   },
   course: {
-    type: string
+    type: String
   },
   group: {
-    type: string
+    type: String
   },
   userType: {
-    type: string
+    type: String
   },
   position: {
-    type: string
+    type: String
   },
 },{
     collection: 'users'

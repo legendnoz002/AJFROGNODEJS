@@ -68,19 +68,26 @@
           <table class="table table-striped">
               <thead>
                 <tr>
-                  <td><b>Username</b></td>
-                  <td><b>Password</b></td>
-                  <td><b>User type</b></td>
-                  <td colspan="2"><b>Action</b></td>
+                  <td><b>รหัสเจ้าหน้าที่</b></td>
+                  <td><b>ชื่อ-นามสกุล</b></td>
+                  <td><b>คณะ</b></td>
+                  <td><b>สาขา</b></td>
+                  <td><b>ตำแหน่ง</b></td>
+                  <td><b>ข้อมูลเพิ่มเติม</b></td>
+                  <td><b>แก้ไข</b></td>
+                  <td><b>ลบ</b></td>
                 </tr>
               </thead>
               <tbody>
                 <% for(var i=0; i < users.length; i++) { %>
                   
                 <tr>
-                  <td><%= users[i].Username %></td>
-                  <td><%= users[i].Password %></td>
-                  <td><%= users[i].Utype %></td>
+                  <td><%= users[i].ID %></td>
+                  <td><%= users[i].name %> - <%= users[i].surname %></td>
+                  <td><%= users[i].faculty %></td>
+                  <td><%= users[i].branch %></td>
+                  <td><%= users[i].position %></td>
+                  <td><a href="#" class="btn btn-primary">ข้อมูลเพิ่มเติม</a></td>
                   <td><a href="/f/edit/<%= users[i]._id %>" class="btn btn-primary">Edit</a></td>
                   <td><a href="/f/delete/<%= users[i]._id %>" class="btn btn-danger">Delete</a></td>
                 </tr>

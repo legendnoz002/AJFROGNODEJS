@@ -77,8 +77,9 @@ app.get('/c', function (req, res) {
   })
 })
 
-app.get('/f/create', function (req, res) {
-  res.render('create')
+
+app.get('/f/addStudent', function (req, res) {
+  res.render('addStudent')
 })
 
 app.post('/f/post', function (req, res) {
