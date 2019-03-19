@@ -81,25 +81,25 @@
                 </tr>
               </thead>
               <tbody>
-                <% for(var i=0; i < users.length; i++) { %>
+                <% for(var i=0; i < person.length; i++) { %>
                   
                 <tr>
-                  <td><%= users[i].ID %></td>
-                  <td><%= users[i].name %> - <%= users[i].surname %></td>
-                  <td><%= users[i].faculty %></td>
-                  <td><%= users[i].branch %></td>
-                  <td><%= users[i].year %></td>
-                  <td><%= users[i].course %></td>
-                  <td><%= users[i].group %></td>
-                  <td><a href="#" class="btn btn-primary">ดูข้อมูลเพิ่มเติม</a></td>
-                  <td><a href="/f/edit/<%= users[i]._id %>" class="btn btn-primary">Edit</a></td>
-                  <td><a href="/f/delete/<%= users[i]._id %>" class="btn btn-danger">Delete</a></td>
+                  <td><%= person[i].username %></td>
+                  <td><%= person[i].firstName %>  <%= person[i].lastName %></td>
+                  <td><%= person[i].faculty %></td>
+                  <td><%= person[i].major %></td>
+                  <td><%= person[i].year %></td>
+                  <td><%= person[i].branch %></td>
+                  <td><%= person[i].sector %></td>
+                  <td><a href="#" class="btn btn-primary">ตรวจสอบ</a></td>
+                  <td><a href="/f/edit/<%= person[i]._id %>" class="btn btn-primary">Edit</a></td>
+                  <td><a href="/f/delete/<%= person[i]._id %>" class="btn btn-danger">Delete</a></td>
                 </tr>
       
                 <% } %>
               </tbody>
             </table>
-            <a href="/f/addStudent" class="btn btn-success">add user cunt</a>
+            <a href="/f/addStudent" class="btn btn-success">เพิ่ม</a>
             
         </div>
       </div>
