@@ -130,15 +130,23 @@ app.post('/login', function (req, res) {
           res.render('edit', { person: person })
         })
       })
+
       app.post('/f/update/:id', function (req, res) { //UPDATE 
         Student.findById(req.params.id, function (err, person) {
           if (!person)
             return next(new Error('Could not load Document'))
           else {
             // do your updates here
-            person.Username = req.body.Username
-            person.Password = req.body.Password
-            person.Utype = req.body.Utype
+            person.username = req.body.username
+            person.password = req.body.password
+            person.prefixName = req.body.prefixName
+            person.firstName = req.body.firstName
+            person.lastName = req.body.lastName
+            person.faculty = req.body.faculty
+            person.major = req.body.major
+            person.year = req.body.year
+            person.branch = req.body.branch
+            person.sector = req.body.sector
 
             person.save().then(person => {
               res.redirect('/f')

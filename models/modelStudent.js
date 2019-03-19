@@ -14,7 +14,7 @@ const User = new Schema({
     studentId: {
         type: Number
     },
-    prifixName: {
+    prefixName: {
         type: String
     },
     firstName: {
