@@ -21,7 +21,7 @@ mongoose.connect('mongodb://test:test123@ds117816.mlab.com:17816/ooad');
 //PASSWORD: legendnoz007 
 
 app.set('view engine', 'ejs');
-
+app.use(express.static('public'))
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
@@ -30,7 +30,7 @@ app.use('/manage/staff', staffManage)
 app.use('/manage/teacher', teacherManage)
 
 app.get('/', function (req, res) {
-  res.render('login')
+  res.render('login',{err: false})
 })
 
 app.post('/login', function (req, res) {
@@ -40,18 +40,17 @@ app.post('/login', function (req, res) {
   User.findOne({ username: username, password: password }, function (err, user) { // แก้
     if (err) {
       console.log(err)
-      return res.status(500).send()
+      return res.render('login',{err: true})
     }
     if (!user) {
-      console.log('username or password not match')
-      return res.status(404).send()
+      return res.render('login',{err: true})
     }
     return res.redirect('/main')
   })
 })
 
 app.get('/main', function (req, res) {
-  res.render('เมนูอาจารย์')
+  res.render('menuTeacher')
 })
 
 app.listen(port, function () {

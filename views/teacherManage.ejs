@@ -58,15 +58,15 @@
 
       <div class="col-sm-10">
         <div class="container">
-          
+
           <ul class="nav nav-tabs">
             <li class="nav-item"><a class="nav-link" href="/manage/student">จัดการนิสิต</a></li>
             <li class="nav-item"><a class="nav-link" href="/manage/staff">จัดการเจ้าหน้าที่</a></li>
             <li class="nav-item"><a class="nav-link active" href="/manage/teacher">จัดการอาจารย์</a></li>
           </ul>
 
-
-          <table class="table table-striped">
+          <div style="height: 300px !important; overflow: scroll;">
+            <table class="table table-striped">
               <thead>
                 <tr>
                   <td><b>ชื่อ-นามสกุล</b></td>
@@ -80,9 +80,9 @@
               </thead>
               <tbody>
                 <% for(var i=0; i < person.length; i++) { %>
-                  
+
                 <tr>
-                  <td><%= person[i].firstName %>  <%= person[i].lastName %></td>
+                  <td><%= person[i].firstName %> <%= person[i].lastName %></td>
                   <td><%= person[i].faculty %></td>
                   <td><%= person[i].major %></td>
                   <td><%= person[i].position %></td>
@@ -90,12 +90,14 @@
                   <td><a href="teacher/edit/<%= person[i]._id %>" class="btn btn-primary">Edit</a></td>
                   <td><a href="teacher/delete/<%= person[i]._id %>" class="btn btn-danger">Delete</a></td>
                 </tr>
-      
+
                 <% } %>
               </tbody>
             </table>
-            <a href="teacher/addTeacher" class="btn btn-success">เพิ่ม</a>
-            
+          </div>
+
+          <a href="teacher/addTeacher" class="btn btn-success">เพิ่ม</a>
+
         </div>
       </div>
 

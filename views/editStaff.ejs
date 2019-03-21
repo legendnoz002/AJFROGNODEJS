@@ -24,7 +24,7 @@
 
       <div class="form-group">
         <select class="form-control" id="sell" name="prefixName" value="<%= person.prefixName %>">
-          <option  value="<%= person.prefixName %>" disabled selected hidden> <%= person.prefixName %> </option>
+          <option  value="<%= person.prefixName %>" hidden> <%= person.prefixName %> </option>
           <option>นาย</option>
           <option>นางสาว</option>
           <option>นาง</option>
@@ -51,7 +51,7 @@
       </div>
       
       <button type="submit" class="btn btn-info float-right">ยืนยัน</button>
-      <button type="cancel" class="btn btn-info float-right" href="/f">ยกเลิก</button>
+      
   </div>
   </form>
 
