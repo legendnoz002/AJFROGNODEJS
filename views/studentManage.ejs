@@ -18,7 +18,7 @@
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark rounded" style="min-height: 140px;">
     <!-- Brand/logo -->
     <a class="navbar-brand" href="#">
-      <img src="../images/User icon.jpg" style="width:140px;">
+      <img src="../images/LogOut icon.png" style="width:140px;">
     </a>
 
     <ul class="navbar-nav ml-auto" style="color:white; ">
@@ -35,7 +35,7 @@
       <nav class="col-sm-2">
         <ul class="nav nav-pills flex-column">
           <li class="nav-item">
-            <a class="nav-link" href="/main1">หน้าหลัก</a>
+            <a class="nav-link" href="/main">หน้าหลัก</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">จัดการตึก</a>
@@ -60,18 +60,21 @@
         <div class="container">
           
           <ul class="nav nav-tabs">
-            <li class="nav-item"><a class="nav-link" href="/f">จัดการนิสิต</a></li>
-            <li class="nav-item"><a class="nav-link" href="/g">จัดการเจ้าหน้าที่</a></li>
-            <li class="nav-item"><a class="nav-link active" href="c">จัดการอาจารย์</a></li>
+            <li class="nav-item"><a class="nav-link active" href="/manage/student">จัดการนิสิต</a></li>
+            <li class="nav-item"><a class="nav-link" href="/manage/staff">จัดการเจ้าหน้าที่</a></li>
+            <li class="nav-item"><a class="nav-link" href="/manage/teacher">จัดการอาจารย์</a></li>
           </ul>
 
           <table class="table table-striped">
               <thead>
                 <tr>
+                  <td><b>รหัสนิสิต</b></td>
                   <td><b>ชื่อ-นามสกุล</b></td>
                   <td><b>คณะ</b></td>
                   <td><b>สาขา</b></td>
-                  <td><b>ตำแหน่ง</b></td>
+                  <td><b>ชั้นปี</b></td>
+                  <td><b>สาย</b></td>
+                  <td><b>กลุ่มเรียน</b></td>
                   <td><b>ข้อมูลเพิ่มเติม</b></td>
                   <td><b>แก้ไข</b></td>
                   <td><b>ลบ</b></td>
@@ -81,19 +84,22 @@
                 <% for(var i=0; i < person.length; i++) { %>
                   
                 <tr>
+                  <td><%= person[i].username %></td>
                   <td><%= person[i].firstName %>  <%= person[i].lastName %></td>
                   <td><%= person[i].faculty %></td>
                   <td><%= person[i].major %></td>
-                  <td><%= person[i].position %></td>
+                  <td><%= person[i].year %></td>
+                  <td><%= person[i].branch %></td>
+                  <td><%= person[i].sector %></td>
                   <td><a href="#" class="btn btn-primary">ตรวจสอบ</a></td>
-                  <td><a href="/f/edit/<%= person[i]._id %>" class="btn btn-primary">Edit</a></td>
-                  <td><a href="/f/delete/<%= person[i]._id %>" class="btn btn-danger">Delete</a></td>
+                  <td><a href="student/edit/<%= person[i]._id %>" class="btn btn-primary">Edit</a></td>
+                  <td><a href="student/delete/<%= person[i]._id %>" class="btn btn-danger">Delete</a></td>
                 </tr>
       
                 <% } %>
               </tbody>
             </table>
-            <a href="/f/addTeacher" class="btn btn-success">เพิ่ม</a>
+            <a href="student/addStudent" class="btn btn-success">เพิ่ม</a>
             
         </div>
       </div>

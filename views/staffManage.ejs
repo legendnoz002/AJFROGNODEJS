@@ -35,7 +35,7 @@
       <nav class="col-sm-2">
         <ul class="nav nav-pills flex-column">
           <li class="nav-item">
-            <a class="nav-link" href="/main1">หน้าหลัก</a>
+            <a class="nav-link" href="/main">หน้าหลัก</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">จัดการตึก</a>
@@ -60,10 +60,11 @@
         <div class="container">
           
           <ul class="nav nav-tabs">
-            <li class="nav-item"><a class="nav-link" href="/f">จัดการนิสิต</a></li>
-            <li class="nav-item"><a class="nav-link active" href="/g">จัดการเจ้าหน้าที่</a></li>
-            <li class="nav-item"><a class="nav-link" href="/c">จัดการอาจารย์</a></li>
+            <li class="nav-item"><a class="nav-link" href="/manage/student">จัดการนิสิต</a></li>
+            <li class="nav-item"><a class="nav-link active" href="/manage/staff">จัดการเจ้าหน้าที่</a></li>
+            <li class="nav-item"><a class="nav-link" href="/manage/teacher">จัดการอาจารย์</a></li>
           </ul>
+
 
           <table class="table table-striped">
               <thead>
@@ -88,14 +89,14 @@
                   <td><%= person[i].major %></td>
                   <td><%= person[i].position %></td>
                   <td><a href="#" class="btn btn-primary">ตรวจสอบ</a></td>
-                  <td><a href="/f/edit/<%= person[i]._id %>" class="btn btn-primary">Edit</a></td>
-                  <td><a href="/f/delete/<%= person[i]._id %>" class="btn btn-danger">Delete</a></td>
+                  <td><a href="staff/edit/<%= person[i]._id %>" class="btn btn-primary">Edit</a></td>
+                  <td><a href="staff/delete/<%= person[i]._id %>" class="btn btn-danger">Delete</a></td>
                 </tr>
       
                 <% } %>
               </tbody>
             </table>
-            <a href="/f/addStaff" class="btn btn-success">เพิ่ม</a>
+            <a href="staff/addStaff" class="btn btn-success">เพิ่ม</a>
             
         </div>
       </div>

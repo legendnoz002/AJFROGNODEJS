@@ -37,6 +37,9 @@ const User = new Schema({
     }, 
     sector: {
         type: Number
+    },
+    ID: {
+        type: String
     }
 }, { collection: 'person' })
 

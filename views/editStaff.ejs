@@ -14,7 +14,7 @@
 <body>
   <div class="container">
     <h1>Edit User</h1>
-    <form method="post" action="/f/update/<%= person.id %>">
+    <form method="post" action="/manage/staff/update/<%= person.id %>">
       <div class="form-group">
         <input type="text" class="form-control" name="username" value="<%= person.username %>">
       </div>
@@ -24,12 +24,16 @@
 
       <div class="form-group">
         <select class="form-control" id="sell" name="prefixName" value="<%= person.prefixName %>">
+          <option  value="<%= person.prefixName %>" disabled selected hidden> <%= person.prefixName %> </option>
           <option>นาย</option>
           <option>นางสาว</option>
           <option>นาง</option>
         </select>
       </div>
-
+      
+      <div class="form-group">
+        <input type="text" class="form-control" name="ID" value="<%= person.ID %>">
+      </div>
       <div class="form-group">
         <input type="text" class="form-control" name="firstName" value="<%= person.firstName %>">
       </div>
@@ -43,14 +47,9 @@
         <input type="text" class="form-control" name="major" value="<%= person.major %>">
       </div>
       <div class="form-group">
-        <input type="text" class="form-control" name="year" value="<%= person.year %>">
+        <input type="text" class="form-control" name="position" value="<%= person.position %>">
       </div>
-      <div class="form-group">
-        <input type="text" class="form-control" name="branch" value="<%= person.branch %>">
-      </div>
-      <div class="form-group">
-        <input type="text" class="form-control" name="sector" value="<%= person.sector %>">
-      </div>
+      
       <button type="submit" class="btn btn-info float-right">ยืนยัน</button>
       <button type="cancel" class="btn btn-info float-right" href="/f">ยกเลิก</button>
   </div>

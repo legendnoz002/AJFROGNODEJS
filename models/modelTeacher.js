@@ -27,13 +27,7 @@ var User = new Schema ({
     },
     major : {
         type : String 
-    } ,
-    gender : {
-        type : String
-    } ,
-    age : {
-        type : Number
-    } , 
+    }, 
     course : {
         type : String
     },
