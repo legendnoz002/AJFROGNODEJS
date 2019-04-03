@@ -10,8 +10,7 @@ const staffManage = require('./routes/staffRouter')
 const teacherManage = require('./routes/teacherRouter')
 
 const User = require('./models/user')
-const Staff = require('./models/modelStaff')
-const Teacher = require('./models/modelTeacher')
+
 
 
 mongoose.Promise = global.Promise;
@@ -45,6 +44,17 @@ app.post('/login', function (req, res) {
     if (!user) {
       return res.render('login',{err: true})
     }
+
+    if(user.uType == 'student') {
+      ///////////////// render "STUDENT MENU" //////////////////
+    }
+    if(user.uType == 'teacher') {
+      ///////////////// render "STUDENT MENU" //////////////////
+    }
+    if(user.uType == 'staff') {
+      ///////////////// render "STUDENT MENU" //////////////////
+    }
+
     return res.redirect('/main')
   })
 })
