@@ -27,11 +27,11 @@ app.use(express.static('public'))
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-app.use('/manage/student', studentManage)
-app.use('/manage/staff', staffManage)
-app.use('/manage/teacher', teacherManage)
-app.use('/manage/course', courseManage)
-app.use('/manage/year', yearManage)
+app.use('/manageStudent', studentManage)
+app.use('/manageStaff', staffManage)
+app.use('/manageTeacher', teacherManage)
+app.use('/manageCourse', courseManage)
+app.use('/manageYear', yearManage)
 
 app.get('/', function (req, res) {
   res.render('login', { err: false })
