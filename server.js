@@ -8,7 +8,8 @@ const bodyParser = require('body-parser');
 const studentManage = require('./routes/studentRouter')
 const staffManage = require('./routes/staffRouter')
 const teacherManage = require('./routes/teacherRouter')
-
+const yearManage = require('./routes/yearRouter')
+const courseManage = require('./routes/courseRouter')
 const User = require('./models/user')
 
 
@@ -19,6 +20,8 @@ mongoose.connect('mongodb://test:test123@ds117816.mlab.com:17816/ooad');
 //ID: legendnoz002
 //PASSWORD: legendnoz007 
 
+
+
 app.set('view engine', 'ejs');
 app.use(express.static('public'))
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -27,9 +30,11 @@ app.use(bodyParser.json());
 app.use('/manage/student', studentManage)
 app.use('/manage/staff', staffManage)
 app.use('/manage/teacher', teacherManage)
+app.use('/manage/course', courseManage)
+app.use('/manage/year', yearManage)
 
 app.get('/', function (req, res) {
-  res.render('login',{err: false})
+  res.render('login', { err: false })
 })
 
 app.post('/login', function (req, res) {
@@ -39,19 +44,19 @@ app.post('/login', function (req, res) {
   User.findOne({ username: username, password: password }, function (err, user) { // แก้
     if (err) {
       console.log(err)
-      return res.render('login',{err: true})
+      return res.render('login', { err: true })
     }
     if (!user) {
-      return res.render('login',{err: true})
+      return res.render('login', { err: true })
     }
 
-    if(user.uType == 'student') {
+    if (user.uType == 'student') {
       ///////////////// render "STUDENT MENU" //////////////////
     }
-    if(user.uType == 'teacher') {
+    if (user.uType == 'teacher') {
       ///////////////// render "STUDENT MENU" //////////////////
     }
-    if(user.uType == 'staff') {
+    if (user.uType == 'staff') {
       ///////////////// render "STUDENT MENU" //////////////////
     }
 
